@@ -1,0 +1,46 @@
+# =============================================================================
+# ADAS HIL Test Bench Configuration
+# =============================================================================
+# Think of this file like the "settings panel" for your test bench.
+# In a real HIL setup, this would map to your dSPACE ControlDesk
+# or NI VeriStand configuration — thresholds, timing, vehicle parameters.
+# =============================================================================
+
+bench:
+  name: "ADAS HIL Bench - AEB/ACC Validation"
+  dut: "ADAS ECU v2.4.1"            # Device Under Test (the ECU being tested)
+  can_channel: "CAN1"               # Which CAN channel the ECU is on
+  sample_rate_ms: 20                # processes ADAS data every 20ms (real spec!)
+
+# -----------------------------------------------------------------------------
+# AEB (Automatic Emergency Braking) thresholds
+# These come from ISO 22737 and Euro NCAP requirements
+# -----------------------------------------------------------------------------
+aeb:
+  ttc_threshold_s: 2.5              # Time-To-Collision trigger threshold (seconds)
+  brake_response_max_ms: 150        # ECU must respond within 150ms (ISO 26262)
+  min_deceleration_g: 0.6           # Minimum braking force (g)
+  max_deceleration_g: 1.0           # Maximum braking force (g)
+  speed_range_kph:
+    min: 10                         # AEB active above 10 kph
+    max: 80                         # AEB active below 80 kph
+
+# -----------------------------------------------------------------------------
+# ACC (Adaptive Cruise Control) thresholds
+# -----------------------------------------------------------------------------
+acc:
+  follow_gap_min_m: 20              # Minimum following distance (metres)
+  follow_gap_max_m: 80              # Maximum following distance (metres)
+  speed_tolerance_kph: 2.0          # Acceptable speed error
+  response_time_max_ms: 300         # ACC must respond to target within 300ms
+  speed_range_kph:
+    min: 30
+    max: 160
+
+# -----------------------------------------------------------------------------
+# Test environment
+# -----------------------------------------------------------------------------
+environment:
+  log_dir: "logs/"
+  report_dir: "reports/"
+  pass_threshold_percent: 80        # % of tests that must pass for suite to pass
