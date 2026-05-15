@@ -105,3 +105,6 @@ This framework mirrors the patterns used on production HIL benches:
 ## HTML Report
 <img width="1827" height="882" alt="image" src="https://github.com/user-attachments/assets/4f5bc3cc-be42-45f4-b036-42aee9dda72d" />
 
+<img width="1693" height="930" alt="image" src="https://github.com/user-attachments/assets/4cbfac7b-5bc3-4d39-ae89-7206b570c8fb" />
+
+
