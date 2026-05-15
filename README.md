@@ -102,4 +102,6 @@ This framework mirrors the patterns used on production HIL benches:
 - **Euro NCAP** — AEB and ACC test scenario parameters
 
 ---
+## HTML Report
+<img width="1827" height="882" alt="image" src="https://github.com/user-attachments/assets/4f5bc3cc-be42-45f4-b036-42aee9dda72d" />
 
